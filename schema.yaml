@@ -1,3 +1,22 @@
 
 
-key : val
+
+
+
+COLUMNS :
+  UserID                          :    int64
+  Age                             :   object
+  Gender                          :   object
+  Location                        :   object
+  Language                        :   object
+  EducationLevel                  :   object
+  LikesandReactions               :    int64
+  FollowedAccounts                :    int64
+  DeviceUsage                     :   object
+  TimeSpentOnlinehrsweekday       :  float64
+  TimeSpentOnlinehrsweekend       :  float64
+  ClickThroughRates               :  float64
+  ConversionRates                 :  float64
+  AdInteractionTime               :    int64
+  IncomeLevel                     :   object
+  TopInterests                    :   object
