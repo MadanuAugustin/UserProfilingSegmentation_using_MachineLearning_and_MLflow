@@ -9,7 +9,7 @@ import os
 import sys
 # from box.exceptions import BoxValueError
 import yaml
-from UserProfilingSegmentation import logger, CustomException
+from src.UserProfilingSegmentation import logger, CustomException
 import json
 import joblib
 from box import ConfigBox
