@@ -2,7 +2,8 @@
 
 from src.UserProfilingSegmentation.constants import *
 from src.UserProfilingSegmentation.utils.common import read_yaml, create_directories
-from src.UserProfilingSegmentation.entity.config_entity import (DataIngestionConfig, DataValidationConfig)
+from src.UserProfilingSegmentation.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig,
+                                                                ModelTrainerConfig)
 from src.UserProfilingSegmentation import logger
 
 
@@ -54,3 +55,37 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+    
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir= config.root_dir,
+            local_data_file= config.local_data_file,
+            data_path = config.data_path,
+        
+        )
+    
+
+        return data_transformation_config
+    
+
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        
+        config = self.config.model_trainer
+        params = self.params.KMeans
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir = config.root_dir,
+            data_path= config.data_path,
+            model_name= config.model_name,
+            n_clusters=params.n_clusters,
+            init=params.init
+        )
+
+        return model_trainer_config

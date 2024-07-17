@@ -23,3 +23,23 @@ data_validation:
   root_dir : artifacts//data_validation
   local_data_file : artifacts//data_ingestion//Raw_data.csv
   STATUS_FILE : artifacts//data_validation//status.txt
+
+
+#################################### DATA-TRANSFORMATION-CONFIGURATION ################################
+
+
+data_transformation :
+  root_dir : artifacts//data_transformation
+  local_data_file : artifacts//data_ingestion//Raw_data.csv
+  data_path : artifacts//data_transformation
+
+
+
+
+#################################### MODEL-TRAINER-CONFIGURATION ################################
+
+model_trainer : 
+  root_dir : artifacts//model_trainer
+  data_path : artifacts//data_transformation//transformed_data_df.csv
+  # we can also save the model as pickle format
+  model_name : model.joblib
