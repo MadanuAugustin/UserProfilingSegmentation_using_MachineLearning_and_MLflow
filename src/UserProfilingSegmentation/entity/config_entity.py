@@ -46,3 +46,16 @@ class ModelTrainerConfig:
     model_name : str
     n_clusters : int
     init : str
+
+
+#################################### MODEL-EVALUATION-CONFIG ################################
+
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir : Path
+    model_path : Path
+    metric_file_name : Path
+    all_params : dict
+    mlflow_uri : str
+    data_path : Path
